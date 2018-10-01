@@ -1,16 +1,17 @@
 $blue: #2077b2
 $primary: $blue
 $grey-dark: #42464c
-$family-sans-serif: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif
+$family-sans-serif: 'Open Sans', sans-serif
 
-@import "node_modules/bulma/bulma"
+@import "bulma/bulma"
+@import "primer-tooltips/index.scss"
 
 .container
   max-width: 800px
   margin: 0 auto
 
 .content
-  font-size: 16px
+  font-size: 21px
   line-height: 1.75
 
 .media-content
@@ -35,19 +36,53 @@ html
   color: #69707a
 
 .title
+  font-size: 28px
   line-height: 1.25
-  font-size: 24px
   a
     color: #222324
   &.notfound
     font-size: 20vw
+.pullquote
+  white-space: nowrap
+  font-size: 16px
 
 code
   color: inherit
   background-color: transparent
   font-size: 90%
 
+figure
+  figcaption
+    display: block
+    padding: 2px 10px 2px 10px
+    border-bottom: 1px solid #ccc
+    border-radius: 3px 3px 0 0
+    font-weight: bold
+    background: $light
+    color: #777
 
+.clipboard
+  &:hover
+    background: rgba(100,115,136,1)
+  // &::before
+  //   content: "Copy"
+  border-style: none
+  width: 52px
+  height: 24px
+  background: rgba(86,98,115,.5)
+  font-size: 11px
+  font-weight: 600
+  letter-spacing: .5px
+  text-transform: uppercase
+  color: #fff
+  border-radius: .5625rem
+  cursor: pointer
+  float: right
+  top: 6px
+  right: 15px
+  position: absolute
+  display: block
+  outline: none
 
 article+article
   margin-top: 80px
@@ -69,29 +104,17 @@ article+article
   h5+h6:not(:first-child)
     margin-top: 20px
   h1
-    font-size: 24px
-    &::before
-      content: "# "
+    font-size: 42px
   h2
-    font-size: 22px
-    &::before
-      content: "## "
+    font-size: 36px
   h3
-    font-size: 20px
-    &::before
-      content: "### "
+    font-size: 30px
   h4
-    font-size: 18px
-    &::before
-      content: "#### "
+    font-size: 26px
   h5
-    font-size: 17px
-    &::before
-      content: "##### "
+    font-size: 20px
   h6
     font-size: 16px
-    &::before
-      content: "###### "
   p,
   ol,
   ul,
@@ -114,9 +137,13 @@ article+article
     background-color: #f8f8f8
     color: #42464c
   pre
+    overflow: visible
+    position: relative
     code
+      border-radius: 0 0 .5625rem .5625rem
+      overflow: auto
       font-size: 90%
-      padding: 1em
+      // padding: 1em
       line-height: 1.5
   li
     pre,
