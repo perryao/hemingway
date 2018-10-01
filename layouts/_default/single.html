@@ -2,8 +2,8 @@
 {{ partial "nav" . }}
 <section class="section">
   <div class="container">
-    <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }}</h2>
-    <h1 class="title">{{ .Title }}</h1>
+    <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }} &middot; {{ .ReadingTime }} min read</h2>
+    <h1 class="title">{{ .Title }}<span class="pullquote"> {{.Description}}</span></h1>
     <div class="content">
       {{ .Content }}
     </div>
