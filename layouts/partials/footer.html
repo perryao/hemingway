@@ -49,6 +49,8 @@
   }
   hljs.initHighlightingOnLoad();
 </script>
-{{ if .Site.GoogleAnalytics }}
-{{ template "_internal/google_analytics_async.html" . }}
+{{ if not .Site.IsServer }}
+  {{ if .Site.GoogleAnalytics }}
+  {{ template "_internal/google_analytics_async.html" . }}
+  {{ end }}
 {{ end }}
