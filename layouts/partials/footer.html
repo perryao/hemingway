@@ -5,12 +5,16 @@
 </section>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/highlight.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
 {{ range .Site.Params.highlight.languages }}
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.6.0/languages/{{ . }}.min.js"></script>
 {{ end }}
 <script>
   var snippets = document.querySelectorAll('.language-scala');
 
+  snippets.forEach(function(block) {
+    hljs.lineNumbersBlock(block);
+  });
   [].forEach.call(snippets, function(snippet) {
       snippet.insertAdjacentHTML('beforebegin', '<button class="clipboard" data-clipboard-snippet>Copy</button>');
   });
