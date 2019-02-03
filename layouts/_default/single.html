@@ -1,5 +1,6 @@
 {{ partial "header" . }}
 {{ partial "nav" . }}
+<body>
 <section class="section">
   <div class="container">
     <h2 class="subtitle is-6">{{ .Date.Format "January 2, 2006" }} &middot; {{ .ReadingTime }} min read</h2>
@@ -9,6 +10,7 @@
     </div>
   </div>
 </section>
+</body>
 {{ partial "utterances" . }}
 {{ partial "disqus" . }}
 {{ partial "footer" . }}
